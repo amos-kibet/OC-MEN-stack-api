@@ -101,7 +101,6 @@ exports.deleteThing = (req, res, next) => {
                 })
             }
         )
-
 };
 
 exports.getAllStuff = (req, res, next) => {
