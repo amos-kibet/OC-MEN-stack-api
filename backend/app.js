@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
+require('dotenv').config();
 
 const stuffRouter = require('./routes/stuff');
 const userRouter = require('./routes/user');
@@ -10,7 +11,7 @@ const userRouter = require('./routes/user');
 const app = express();
 app.use(cors());
 
-mongoose.connect('mongodb+srv://User_1:07049374@cluster0.esfo1.mongodb.net/Cluster0?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.DB_CONFIG, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => {
         console.log('Successfully connected to Mongodb Atlas!');
     })
